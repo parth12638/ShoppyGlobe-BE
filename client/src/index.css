@@ -1,0 +1,36 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f1f1f2;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Keyframe Animation for Endless Scrolling */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Scrolling Animation */
+.animate-scroll {
+  display: flex;
+  gap: 1.5rem;
+  width: calc(200%); /* Ensure we have enough space for seamless looping */
+  animation: scroll-left 20s linear infinite; /* Infinite animation */
+}
+
+.relative {
+  position: relative;
+  overflow: hidden; /* Hide overflow to prevent a horizontal scrollbar */
+  width: 100%;
+}
